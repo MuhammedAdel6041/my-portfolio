@@ -1,10 +1,8 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+
+import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
+
+import { SiGmail } from "react-icons/si";
 
 export const links = [
   {
@@ -33,6 +31,12 @@ export const links = [
   },
 ] as const;
 
+export const socialLinks = [
+  { icon: React.createElement(FaLinkedin), href: 'https://www.linkedin.com/in/muhammed-el-menshawy-165b2135b' },
+  { icon: React.createElement(FaGithub), href: 'https://github.com/MuhammedAdel6041' },
+  { icon: React.createElement(SiGmail), href: 'mailto:muhammad.a.elmenshawy@gmail.com' },
+  { icon: React.createElement(FaWhatsapp), href: 'https://wa.me/201122249273' },
+] as const;
 // export const experiencesData = [
 //   {
 //     title: "Graduated bootcamp",
