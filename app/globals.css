@@ -1,26 +1,50 @@
 @import "tailwindcss";
+ 
+/* 🌞 LIGHT MODE — ARCTIC CYBER MINT */
+@theme {
+  --color-PrimaryBg: #0D1117;
+  --color-PrimaryText: #D7DBDF;
+  --color-SecondaryText: #9BA5B5;
+  --color-Border: #21262D;
+  --color-CardBg: #161B22;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-Accent: #4EF5C8;
+  --color-AccentHover: #41CFA9;
+  --color-AccentMuted: #1E2D29;
+
+  --color-NavBg: rgba(13, 17, 23, 0.65);
+  --color-NavText: #D7DBDF;
+  --color-NavHover: #4EF5C8;
+
+  --color-SectionBg: #161B22;
+  --color-SectionText: #9BA5B5;
+  --color-Heading: #FFFFFF;
+
+  --color-ProjectBg: #161B22;
+  --color-ProjectText: #9BA5B5;
+  --color-ProjectTitle: #D7DBDF;
+
+  --color-ContactGradientFrom: #0D1117;
+  --color-ContactGradientTo: #1E2D29;
+  --color-ContactText: #D7DBDF;
+
+  --color-BtnBg: #4EF5C8;
+  --color-BtnText: #0D1117;
+  --color-BtnHoverBg: #41CFA9;
+  --color-BtnOutline: #4EF5C8;
+  --color-BtnOutlineHoverBg: #4EF5C8;
+  --color-BtnOutlineHoverText: #0D1117;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* 🌊 DARK MODE — ARCTIC CYBER MINT */
+@theme dark {
+  --color-PrimaryBg: #080B0E;
+  --color-PrimaryText: #CBD2D6;
+  --color-SecondaryText: #8F9BA8;
+  --color-Border: #14181D;
+  --color-CardBg: #101418;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-Accent: #4EF5C8;
+  --color-AccentHover: #5CFAD3;
+  --color-AccentMuted: #193027;
 }
