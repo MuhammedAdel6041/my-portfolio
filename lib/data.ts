@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
-
+import { FaRegHandPeace, FaHandshake, FaRegCopyright } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 export const links = [
@@ -37,6 +37,42 @@ export const socialLinks = [
   { icon: React.createElement(SiGmail), href: 'mailto:muhammad.a.elmenshawy@gmail.com' },
   { icon: React.createElement(FaWhatsapp), href: 'https://wa.me/201122249273' },
 ] as const;
+
+
+
+export const Scroll = [
+  { text: "Welcome to my profile", icon: React.createElement(FaRegHandPeace) },
+  { text: "Let's work together", icon: React.createElement(FaHandshake) },
+  { text: "2024 Muhammed Adel", icon: React.createElement(FaRegCopyright) },
+  { text: "Welcome to my profile", icon: React.createElement(FaRegHandPeace) },
+  { text: "Let's work together", icon: React.createElement(FaHandshake) },
+  { text: "2024 Muhammed Adel", icon: React.createElement(FaRegCopyright) }
+] as const;
+
+
+export const lines = [
+    { text: "const aboutMe = {", color: "text-[var(--color-Accent)]" },
+    { text: '  name: "Muhammad Adel",', color: "text-green-400" },
+    { text: '  role: "Front-End Developer",', color: "text-blue-400" },
+    { text: '  location: "Egypt",', color: "text-purple-400" },
+    {
+        text: '  stack: ["React", "Next.js", "Tailwind CSS"],',
+        color: "text-amber-400",
+    },
+    {
+        text: '  passion: "Building elegant & fast web experiences 🚀",',
+        color: "text-pink-400",
+    },
+    {
+        text: '  goal: "Creating user interfaces that feel alive ✨",',
+        color: "text-orange-400",
+    },
+    {
+        text: '  availableFor: "Frontend Opportunities 💼"',
+        color: "text-emerald-400",
+    },
+    { text: "};", color: "text-[var(--color-Accent)]" },
+]as const;
 // export const experiencesData = [
 //   {
 //     title: "Graduated bootcamp",

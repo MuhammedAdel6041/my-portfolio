@@ -31,6 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative 
   bg-[var(--color-PrimaryBg)] text-[var(--color-PrimaryText)]`}
+  suppressHydrationWarning={true} 
       >
 
         <div

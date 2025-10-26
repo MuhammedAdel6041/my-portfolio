@@ -23,7 +23,7 @@ export default function Intro() {
             transition={{ type: 'tween', duration: 0.2 }}
           >
             <Image
-              src="/images/profile.jpg"
+              src="/images/avataaars.png"
               alt="Profile photo of Muhammed Adel"
               width={200}
               height={200}
@@ -119,34 +119,7 @@ export default function Intro() {
           </motion.span>
         </a>
       </motion.div>
-      {/* Scroll Down Indicator */}
-      <Link href="#about" scroll={true}>
-        <motion.div
-          initial={{ y: 100, x: "-50%", scale: 0.8, opacity: 0 }}
-          animate={{ y: 0, x: "-50%", scale: 1, opacity: 1 }}
-          transition={{
-            duration: 1.2,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-50 cursor-pointer"
-        >
-          <div className="w-10 h-20 border-2 border-[var(--color-Accent)] rounded-3xl flex items-start justify-center shadow-[0_0_15px_var(--color-Accent)] overflow-hidden">
-            <motion.div
-              className="w-4 h-4 bg-[var(--color-Accent)] rounded-full mt-1"
-              animate={{
-                y: [0, 60],
-                opacity: [1, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-              }}
-            />
-          </div>
-        </motion.div>
-      </Link>
+
       {/* Social Links */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -222,6 +195,34 @@ export default function Intro() {
         ))}
       </motion.div>
 
+      {/* Scroll Down Indicator */}
+      <Link href="#about" scroll={true}>
+        <motion.div
+          initial={{ y: 100, x: "-50%", scale: 0.8, opacity: 0 }}
+          animate={{ y: 0, x: "-50%", scale: 1, opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer"
+        >
+          <div className="w-10 h-20 border-2 border-[var(--color-Accent)] rounded-3xl flex items-start justify-center shadow-[0_0_15px_var(--color-Accent)] overflow-hidden">
+            <motion.div
+              className="w-4 h-4 bg-[var(--color-Accent)] rounded-full mt-1"
+              animate={{
+                y: [0, 60],
+                opacity: [1, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+        </motion.div>
+      </Link>
     </section>
   );
 }
