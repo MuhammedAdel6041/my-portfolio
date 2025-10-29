@@ -3,6 +3,9 @@ import React from "react";
 import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { FaRegHandPeace, FaHandshake, FaRegCopyright } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import P1 from "../public/images/P1.png";
+import P2 from "../public/images/P2.png";
+import P3 from "../public/images/P3.png";
 
 export const links = [
   {
@@ -51,28 +54,82 @@ export const Scroll = [
 
 
 export const lines = [
-    { text: "const aboutMe = {", color: "text-[var(--color-Accent)]" },
-    { text: '  name: "Muhammad Adel",', color: "text-green-400" },
-    { text: '  role: "Front-End Developer",', color: "text-blue-400" },
-    { text: '  location: "Egypt",', color: "text-purple-400" },
-    {
-        text: '  stack: ["React", "Next.js", "Tailwind CSS"],',
-        color: "text-amber-400",
-    },
-    {
-        text: '  passion: "Building elegant & fast web experiences 🚀",',
-        color: "text-pink-400",
-    },
-    {
-        text: '  goal: "Creating user interfaces that feel alive ✨",',
-        color: "text-orange-400",
-    },
-    {
-        text: '  availableFor: "Frontend Opportunities 💼"',
-        color: "text-emerald-400",
-    },
-    { text: "};", color: "text-[var(--color-Accent)]" },
-]as const;
+  { text: "const aboutMe = {", color: "text-[var(--color-Accent)]" },
+  { text: '  name: "Muhammad Adel",', color: "text-green-400" },
+  { text: '  role: "Front-End Developer",', color: "text-blue-400" },
+  { text: '  location: "Egypt",', color: "text-purple-400" },
+  {
+    text: '  stack: ["React", "Next.js", "Tailwind CSS"],',
+    color: "text-amber-400",
+  },
+  {
+    text: '  passion: "Building elegant & fast web experiences 🚀",',
+    color: "text-pink-400",
+  },
+  {
+    text: '  goal: "Creating user interfaces that feel alive ✨",',
+    color: "text-orange-400",
+  },
+  {
+    text: '  availableFor: "Frontend Opportunities 💼"',
+    color: "text-emerald-400",
+  },
+  { text: "};", color: "text-[var(--color-Accent)]" },
+] as const;
+
+export const projectsData = [
+  {
+    title: "Deal Hunt E-Commerce",
+    description:
+      "Developed a fully responsive e-commerce platform with dynamic product listings and seamless user navigation, improving user retention by 25% .",
+    tags: ["React", "Vite", "Ant Design", "JavaScript", "Tailwind", "Redux Toolkit"],
+    imageUrl: P1,
+    demoLink:"https://ecommerce-swap.netlify.app/",
+    gitHubRepo:"https://github.com/MuhammedAdel6041/E-commerce_Swap"
+  },
+  {
+    title: "Cryptocurrency",
+    description:
+      "Built a Responsive Cryptocurrency Website to display Real-Time Market data , Coins  and  Integrated Dynamic Charts for Data Visualization and Enhanced Interactivity with Animation.",
+    tags: ["React", "Vite", "Ant Design", "JavaScript", "Tailwind", "Redux Toolkit ", "Chart.js"],
+    imageUrl: P2,
+     demoLink:"https://cryptomeria.netlify.app/",
+    gitHubRepo:"https://github.com/MuhammedAdel6041/Cryptomeria"
+  },
+  {
+    title: "Dashboard",
+    description:
+      " Built a Responsive Admin-Dashboard with Visualization, real-time data fetching adn Implement Form Validation, State Management, and Seamless Navigation.",
+    tags: ["React", "Vite", "Ant Design", "JavaScript", "Tailwind", "Redux Toolkit ", "Axios"],
+    imageUrl: P3,
+     demoLink:"https://deal-hunt.netlify.app/signup",
+    gitHubRepo:"https://github.com/MuhammedAdel6041/Dashborad"
+  },
+] as const;
+
+// export const skillsData = [
+//   "HTML",
+//   "CSS",
+//   "JavaScript",
+//   "TypeScript",
+//   "React",
+//   "Next.js",
+//   "Node.js",
+//   "Git",
+//   "Tailwind",
+//   "Prisma",
+//   "MongoDB",
+//   "Redux",
+//   "GraphQL",
+//   "Apollo",
+//   "Express",
+//   "PostgreSQL",
+//   "Python",
+//   "Django",
+//   "Framer Motion",
+// ] as const;
+
+
 // export const experiencesData = [
 //   {
 //     title: "Graduated bootcamp",
@@ -98,50 +155,4 @@ export const lines = [
 //     icon: React.createElement(FaReact),
 //     date: "2021 - present",
 //   },
-// ] as const;
-
-// export const projectsData = [
-//   {
-//     title: "CorpComment",
-//     description:
-//       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-//     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-//     imageUrl: corpcommentImg,
-//   },
-//   {
-//     title: "rmtDev",
-//     description:
-//       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-//     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-//     imageUrl: rmtdevImg,
-//   },
-//   {
-//     title: "Word Analytics",
-//     description:
-//       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-//     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-//     imageUrl: wordanalyticsImg,
-//   },
-// ] as const;
-
-// export const skillsData = [
-//   "HTML",
-//   "CSS",
-//   "JavaScript",
-//   "TypeScript",
-//   "React",
-//   "Next.js",
-//   "Node.js",
-//   "Git",
-//   "Tailwind",
-//   "Prisma",
-//   "MongoDB",
-//   "Redux",
-//   "GraphQL",
-//   "Apollo",
-//   "Express",
-//   "PostgreSQL",
-//   "Python",
-//   "Django",
-//   "Framer Motion",
 // ] as const;

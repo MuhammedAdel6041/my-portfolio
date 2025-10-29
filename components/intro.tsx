@@ -8,13 +8,37 @@ import { BsArrowRight } from 'react-icons/bs'; // Added BsArrowDown import
 
 import { HiDownload } from 'react-icons/hi';
 
+
 export default function Intro() {
   return (
+
+
     <section
       className="relative w-full h-screen flex items-center justify-center flex-col overflow-hidden px-4 text-[var(--color-PrimaryText)]
-  bg-[url('/images/hero.svg')] bg-cover bg-center bg-no-repeat"
+    bg-[url('/images/hero.svg')] bg-cover bg-center bg-no-repeat"
     >
+      {/* <motion.svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 2000 1500"
+    className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+    animate={{ rotate: 360 }}
+    transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
+  >
+    <defs>
+      <circle id="a" fill="none" stroke="#D60" strokeWidth="4" r="315" />
+      <use id="b" href="#a" strokeDasharray="250 250 9999" />
+      <use id="c" href="#a" strokeDasharray="1000 500 9999" />
+    </defs>
+
+    <g transform="translate(1000 750)">
+      <use href="#a" />
+      <use href="#b" transform="scale(1.4)" />
+      <use href="#c" transform="scale(1.9)" />
+    </g>
+  </motion.svg> */}
       {/* Avatar + Status */}
+
+
       <div className="flex items-center justify-center flex-col text-center">
         <div className="relative">
           <motion.div
@@ -47,10 +71,10 @@ export default function Intro() {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: 'tween', duration: 0.2 }}
-          className="mt-3"
+          className=" animate-pulse"
         >
           <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-[var(--color-AccentMuted)] text-[var(--color-Accent)] shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-[var(--color-Accent)] animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-[var(--color-Accent)] " />
             Available for opportunities
           </span>
         </motion.div>
@@ -58,7 +82,7 @@ export default function Intro() {
 
       {/* Text */}
       <motion.h1
-        className="mt-6 text-center text-2xl font-medium leading-relaxed max-w-2xl text-[var(--color-PrimaryText)]"
+        className="mt-3 text-center text-2xl font-medium leading-relaxed max-w-2xl text-[var(--color-PrimaryText)]"
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -77,152 +101,150 @@ export default function Intro() {
       >
         <Link href="#contact">
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="group relative inline-flex h-12 items-center justify-center rounded-full 
-        bg-[var(--color-Accent)] px-8 font-medium text-[var(--color-BtnText)] 
-        transition-all duration-300 hover:shadow-[0_0_20px_var(--color-Accent)] cursor-pointer"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="
+      group relative inline-flex h-12 items-center justify-center rounded-full
+      bg-white/5 backdrop-blur-md
+      border border-white/10 text-[var(--color-PrimaryText)]
+      px-8 font-medium overflow-hidden
+      transition-all duration-300 ease-out
+      hover:border-[var(--color-Accent)] hover:text-[var(--color-Accent)] cursor-pointer
+    "
           >
-            <span>Let's Talk</span>
-
-            {/* Animated Arrow */}
+            {/* Shimmer light */}
             <span
-              className="ml-2 flex items-center transform -rotate-45 transition-all duration-300 ease-out 
-          group-hover:rotate-0 group-hover:translate-x-1"
-            >
-              <BsArrowRight className="text-[1.2rem]" />
+              className="
+        absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent
+        -translate-x-full group-hover:translate-x-full
+        transition-transform duration-500 ease-out
+      "
+            />
+
+            <span className="relative z-10 flex items-center gap-2">
+              Let’s Talk
+              <BsArrowRight
+                className="
+          transition-transform duration-300 ease-out
+          group-hover:translate-x-1
+        "
+              />
             </span>
           </motion.button>
         </Link>
 
+
+
         <a
           href="/CV.pdf"
           download
-          className="group bg-[var(--color-CardBg)] text-[var(--color-PrimaryText)] border border-[var(--color-Border)] 
-      px-7 py-3 rounded-full flex items-center gap-2 
-      transition-all duration-300
-      hover:bg-[var(--color-Accent)] hover:text-white hover:border-[var(--color-Accent)]
-      hover:scale-[1.06] active:scale-[0.98]
-      hover:shadow-[0_0_20px_var(--color-Accent)]"
+          className="
+    group relative overflow-hidden 
+    bg-[var(--color-CardBg)] text-[var(--color-PrimaryText)] 
+    border border-[var(--color-Border)] 
+    px-7 py-3 rounded-full flex items-center gap-2
+    transition-all duration-500 ease-out
+    hover:text-[var(--color-Accent)]
+  "
         >
-          Download CV
-          <motion.span
-            className="opacity-80 text-xl"
-            animate={{ y: [0, -4, 0] }}
-            transition={{
-              duration: 0.8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <HiDownload />
-          </motion.span>
+          <span className="relative z-10 flex items-center gap-2">
+            Download CV
+            <motion.span
+              className="opacity-80 text-xl"
+              animate={{ y: [0, -3, 0] }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <HiDownload />
+            </motion.span>
+          </span>
+
+          {/* subtle gradient sweep effect */}
+          <span
+            className="
+      absolute inset-0 bg-gradient-to-r from-transparent via-[var(--color-Accent)] to-transparent
+      opacity-0 group-hover:opacity-10 group-hover:translate-x-full 
+      transition-all duration-700 ease-out
+    "
+          />
         </a>
+
       </motion.div>
 
       {/* Social Links */}
+ <motion.div
+  initial="hidden"
+  animate="visible"
+  variants={{
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  }}
+  className="hidden sm:flex flex-col gap-6 absolute left-6 top-1/2 -translate-y-1/2"
+>
+  {socialLinks.map((item, i) => (
+    <motion.a
+      key={i}
+      href={item.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      variants={{
+        hidden: { opacity: 0, x: -60 },
+        visible: { opacity: 1, x: 0 },
+      }}
+      transition={{
+        duration: 0.25,
+        ease: "easeOut",
+      }}
+      whileHover={{
+        scale: 1.25,
+        rotate: 5,
+        backgroundColor: "var(--color-Accent)",
+        color: "var(--color-PrimaryBg)",
+        boxShadow: "0 0 20px rgba(78, 245, 200, 0.6)",
+        borderColor: "var(--color-AccentHover)",
+        transition: { duration: 0.25, ease: "easeOut" },
+      }}
+      whileTap={{
+        scale: 0.95,
+        rotate: -3,
+      }}
+      className="
+        flex items-center justify-center text-[1.5rem]
+        bg-[var(--color-CardBg)] text-[var(--color-PrimaryText)]
+        border border-[var(--color-Border)]
+        p-3 rounded-full
+        transition-all duration-300 ease-out
+        hover:border-[var(--color-Accent)]
+        hover:shadow-[0_0_10px_rgba(78,245,200,0.4)]
+        cursor-pointer
+      "
+    >
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        className="hidden sm:flex flex-col gap-6 absolute left-6 top-1/2 -translate-y-1/2"
+        animate={{
+          y: [0, -5, 0],
+        }}
+        transition={{
+          duration: 3 + i,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: i * 0.3,
+        }}
       >
-        {socialLinks.map((item, i) => (
-          <motion.a
-            key={i}
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative text-[1.6rem] text-[var(--color-PrimaryText)] 
-      bg-[var(--color-CardBg)] border border-[var(--color-Border)] 
-      p-3 rounded-full transition-all duration-500
-      hover:text-[var(--color-Accent)] hover:shadow-[0_0_20px_var(--color-Accent)]"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{
-              opacity: 1,
-              y: [0, -4, 0, 4, 0],
-              x: [0, 2, 0, -2, 0],
-              rotate: [0, 1, -1, 0],
-              scale: [1, 1.05, 1],
-            }}
-            transition={{
-              opacity: { duration: 0.8, delay: i * 0.2 },
-              y: {
-                duration: 5,
-                repeat: Infinity,
-                repeatType: "mirror",
-                ease: "easeInOut",
-                delay: i * 0.3,
-              },
-              x: {
-                duration: 6,
-                repeat: Infinity,
-                repeatType: "mirror",
-                ease: "easeInOut",
-                delay: i * 0.2,
-              },
-              rotate: {
-                duration: 6,
-                repeat: Infinity,
-                repeatType: "mirror",
-                ease: "easeInOut",
-                delay: i * 0.4,
-              },
-              scale: {
-                duration: 7,
-                repeat: Infinity,
-                repeatType: "mirror",
-                ease: "easeInOut",
-                delay: i * 0.5,
-              },
-            }}
-          >
-            <motion.span
-              className="absolute inset-0 rounded-full bg-[var(--color-Accent)] opacity-0 blur-md"
-              animate={{
-                opacity: [0, 0.3, 0],
-                scale: [1, 1.3, 1],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                delay: i * 1.2,
-                ease: "easeInOut",
-              }}
-            />
-            {item.icon}
-          </motion.a>
-        ))}
+        {item.icon}
       </motion.div>
+    </motion.a>
+  ))}
+</motion.div>
 
-      {/* Scroll Down Indicator */}
-      <Link href="#about" scroll={true}>
-        <motion.div
-          initial={{ y: 100, x: "-50%", scale: 0.8, opacity: 0 }}
-          animate={{ y: 0, x: "-50%", scale: 1, opacity: 1 }}
-          transition={{
-            duration: 1.2,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer"
-        >
-          <div className="w-10 h-20 border-2 border-[var(--color-Accent)] rounded-3xl flex items-start justify-center shadow-[0_0_15px_var(--color-Accent)] overflow-hidden">
-            <motion.div
-              className="w-4 h-4 bg-[var(--color-Accent)] rounded-full mt-1"
-              animate={{
-                y: [0, 60],
-                opacity: [1, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-              }}
-            />
-          </div>
-        </motion.div>
-      </Link>
+
+
     </section>
   );
 }
