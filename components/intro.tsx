@@ -13,8 +13,8 @@ export default function Intro() {
   return (
 
 
-    <section
-      className="relative w-full h-screen flex items-center justify-center flex-col overflow-hidden px-4 text-[var(--color-PrimaryText)]
+    <section  
+      className="scroll-mt-[100rem] relative w-full h-screen flex items-center justify-center flex-col overflow-hidden px-4 text-[var(--color-PrimaryText)]
     bg-[url('/images/hero.svg')] bg-cover bg-center bg-no-repeat"
     >
       {/* <motion.svg
@@ -186,7 +186,7 @@ export default function Intro() {
       },
     },
   }}
-  className="hidden sm:flex flex-col gap-6 absolute left-6 top-1/2 -translate-y-1/2"
+  className="hidden sm:flex flex-col gap-6   left-6 top-1/2 -translate-y-1/2 fixed z-999"
 >
   {socialLinks.map((item, i) => (
     <motion.a

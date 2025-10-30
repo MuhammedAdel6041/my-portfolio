@@ -1,18 +1,5 @@
 @import "tailwindcss";
-@keyframes parallax-slow {
-  from { background-position: 0 0; }
-  to { background-position: -500px 500px; }
-}
-@keyframes parallax-fast {
-  from { background-position: 0 0; }
-  to { background-position: -1000px 1000px; }
-}
-.animate-parallax-slow {
-  animation: parallax-slow 60s linear infinite;
-}
-.animate-parallax-fast {
-  animation: parallax-fast 30s linear infinite;
-}
+ 
 /* 🌞 LIGHT MODE — ARCTIC CYBER MINT */
 @theme {
   --color-PrimaryBg: #0D1117;
