@@ -10,7 +10,7 @@ export default function About() {
     <section
       id="about"
       className="
-      scroll-mt-28
+      scroll-mt-12
         relative min-h-screen flex flex-col items-center justify-center 
         text-white overflow-hidden 
         px-4 sm:px-6 md:px-10 lg:px-20

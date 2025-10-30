@@ -1,10 +1,13 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { links } from '@/lib/data'
 import Link from 'next/link'
+import clsx from 'clsx'
 
 export default function Header() {
+   const [activeSection, setActiveSection] = useState("Home")
+
    return (
       <header className="z-[999] relative">
 
@@ -35,7 +38,7 @@ export default function Header() {
 
                {links.map((link, i) => (
                   <motion.li
-                     className="h-3/4 flex items-center justify-center relative"
+                     className={"h-3/4 flex items-center justify-center relative"}
                      key={link.hash}
                      initial={{ y: -40, opacity: 0, rotateX: 30 }}
                      animate={{ y: 0, opacity: 1, rotateX: 0 }}
@@ -46,15 +49,32 @@ export default function Header() {
                      }}
                   >
                      <Link
-                        className="flex w-full items-center justify-center px-3 py-3 
-                transition
-                text-[var(--color-NavText)] 
-                hover:text-[var(--color-NavHover)]
-                dark:text-[var(--color-NavText)] 
-                dark:hover:text-[var(--color-NavHover)]"
+                        className={clsx(`flex w-full items-center justify-center px-3 py-3      transition   
+                              text-[var(--color-NavText)] 
+                             hover:text-[var(--color-NavHover)]
+               dark:text-[color:var(--color-NavText)]
+                dark:hover:text-[var(--color-NavHover)]`,{" text-[var(--color-Accent)] dark:text-[var(--color-Accent)]": activeSection === link.name})}
                         href={link.hash}
+                          onClick={() => {
+                  setActiveSection(link.name);
+                 
+                }}
                      >
                         {link.name}
+                        {link.name === activeSection && (
+                  <motion.span
+  className="absolute inset-0 -z-10 rounded-full 
+             bg-[var(--color-AccentHover)]/20 
+             dark:bg-[var(--color-AccentHover)]/30 
+             backdrop-blur-[6px] shadow-[0_0_10px_var(--color-AccentHover)]/25"
+  layoutId="activeSection"
+  transition={{
+    type: "spring",
+    stiffness: 380,
+    damping: 30,
+  }}
+></motion.span>
+                )}
                      </Link>
                   </motion.li>
                ))}
