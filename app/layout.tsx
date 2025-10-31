@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import ActiveSectionContextProvider from "@/context/active-section-context";
 
 
 const geistSans = Geist({
@@ -47,8 +48,13 @@ export default function RootLayout({
     lg:left-[-28rem] xl:left-[15rem] 2xl:left-[-5rem] -z-10
     opacity-20 bg-[#1E2D29]/40 dark:bg-[#0D1B2A]/40"
         ></div>
-        <Header />
+
+         <ActiveSectionContextProvider>
+
+            <Header />
         {children}
+         </ActiveSectionContextProvider>
+      
       </body>
     </html>
   );
