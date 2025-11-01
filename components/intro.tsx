@@ -39,7 +39,7 @@ export default function Intro() {
               height={200}
               priority
               sizes="(max-width: 768px) 96px, 200px"
-              className="w-24 h-24 rounded-full object-cover border-[4px] border-[var(--color-CardBg)] shadow-md"
+              className="w-24 h-24 rounded-full object-cover border-4 border-CardBg shadow-md"
             />
           </motion.div>
 
@@ -127,7 +127,7 @@ export default function Intro() {
           className="
     group relative overflow-hidden 
     bg-[var(--color-CardBg)] text-[var(--color-PrimaryText)] 
-    border border-[var(--color-Border)] 
+    border border-Border 
     px-7 py-3 rounded-full flex items-center gap-2
     transition-all duration-500 ease-out
     hover:text-[var(--color-Accent)]
@@ -151,7 +151,7 @@ export default function Intro() {
           {/* subtle gradient sweep effect */}
           <span
             className="
-      absolute inset-0 bg-gradient-to-r from-transparent via-[var(--color-Accent)] to-transparent
+      absolute inset-0 bg-linear-to-r from-transparent via-[var(--color-Accent)] to-transparent
       opacity-0 group-hover:opacity-10 group-hover:translate-x-full 
       transition-all duration-700 ease-out
     "
@@ -204,7 +204,7 @@ export default function Intro() {
             className="
         flex items-center justify-center text-[1.5rem]
         bg-[var(--color-CardBg)] text-[var(--color-PrimaryText)]
-        border border-[var(--color-Border)]
+        border border-Border
         p-3 rounded-full
         transition-all duration-300 ease-out
         hover:border-[var(--color-Accent)]

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
  
+ 
 
 
 const geistSans = Geist({
@@ -50,7 +51,7 @@ export default function RootLayout({
     opacity-20 bg-[#1E2D29]/40 dark:bg-[#0D1B2A]/40"
         ></div>
 
-       
+    
 <ActiveSectionContextProvider>
    <Header />
         {children}
@@ -58,6 +59,9 @@ export default function RootLayout({
 
 </ActiveSectionContextProvider>
          
+
+      
+
       
       </body>
     </html>
