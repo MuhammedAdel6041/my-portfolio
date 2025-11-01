@@ -1,12 +1,16 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { links } from '@/lib/data'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { useActiveSectionContext } from '@/context/active-section-context'
 
 export default function Header() {
-   const [activeSection, setActiveSection] = useState("Home")
+
+   const { activeSection, setActiveSection, setTimeOfLastClick } =
+      useActiveSectionContext();
+
 
    return (
       <header className="z-[999] relative">
@@ -53,28 +57,29 @@ export default function Header() {
                               text-[var(--color-NavText)] 
                              hover:text-[var(--color-NavHover)]
                dark:text-[color:var(--color-NavText)]
-                dark:hover:text-[var(--color-NavHover)]`,{" text-[var(--color-Accent)] dark:text-[var(--color-Accent)]": activeSection === link.name})}
+                dark:hover:text-[var(--color-NavHover)]`, { " text-[var(--color-Accent)] dark:text-[var(--color-Accent)]": activeSection === link.name })}
                         href={link.hash}
-                          onClick={() => {
-                  setActiveSection(link.name);
-                 
-                }}
+                        onClick={() => {
+                           setActiveSection(link.name);
+                           setTimeOfLastClick(Date.now());
+                        }}
+
                      >
                         {link.name}
                         {link.name === activeSection && (
-                  <motion.span
-  className="absolute inset-0 -z-10 rounded-full 
+                           <motion.span
+                              className="absolute inset-0 -z-10 rounded-full 
              bg-[var(--color-AccentHover)]/20 
              dark:bg-[var(--color-AccentHover)]/30 
              backdrop-blur-[6px] shadow-[0_0_10px_var(--color-AccentHover)]/25"
-  layoutId="activeSection"
-  transition={{
-    type: "spring",
-    stiffness: 380,
-    damping: 30,
-  }}
-></motion.span>
-                )}
+                              layoutId="activeSection"
+                              transition={{
+                                 type: "spring",
+                                 stiffness: 380,
+                                 damping: 30,
+                              }}
+                           ></motion.span>
+                        )}
                      </Link>
                   </motion.li>
                ))}

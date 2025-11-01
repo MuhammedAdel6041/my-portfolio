@@ -1,6 +1,7 @@
 'use client';
 
 import { socialLinks } from '@/lib/data';
+import { useSectionInView } from '@/lib/hooks';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,32 +11,17 @@ import { HiDownload } from 'react-icons/hi';
 
 
 export default function Intro() {
+  const { ref } = useSectionInView("Home", 0.5);
   return (
 
 
-    <section  
+    <section
+
+      ref={ref}
       className="scroll-mt-[100rem] relative w-full h-screen flex items-center justify-center flex-col overflow-hidden px-4 text-[var(--color-PrimaryText)]
     bg-[url('/images/hero.svg')] bg-cover bg-center bg-no-repeat"
     >
-      {/* <motion.svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 2000 1500"
-    className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
-    animate={{ rotate: 360 }}
-    transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
-  >
-    <defs>
-      <circle id="a" fill="none" stroke="#D60" strokeWidth="4" r="315" />
-      <use id="b" href="#a" strokeDasharray="250 250 9999" />
-      <use id="c" href="#a" strokeDasharray="1000 500 9999" />
-    </defs>
 
-    <g transform="translate(1000 750)">
-      <use href="#a" />
-      <use href="#b" transform="scale(1.4)" />
-      <use href="#c" transform="scale(1.9)" />
-    </g>
-  </motion.svg> */}
       {/* Avatar + Status */}
 
 
@@ -175,47 +161,47 @@ export default function Intro() {
       </motion.div>
 
       {/* Social Links */}
- <motion.div
-  initial="hidden"
-  animate="visible"
-  variants={{
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.25,
-      },
-    },
-  }}
-  className="hidden sm:flex flex-col gap-6   left-6 top-1/2 -translate-y-1/2 fixed z-999"
->
-  {socialLinks.map((item, i) => (
-    <motion.a
-      key={i}
-      href={item.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      variants={{
-        hidden: { opacity: 0, x: -60 },
-        visible: { opacity: 1, x: 0 },
-      }}
-      transition={{
-        duration: 0.25,
-        ease: "easeOut",
-      }}
-      whileHover={{
-        scale: 1.25,
-        rotate: 5,
-        backgroundColor: "var(--color-Accent)",
-        color: "var(--color-PrimaryBg)",
-        boxShadow: "0 0 20px rgba(78, 245, 200, 0.6)",
-        borderColor: "var(--color-AccentHover)",
-        transition: { duration: 0.25, ease: "easeOut" },
-      }}
-      whileTap={{
-        scale: 0.95,
-        rotate: -3,
-      }}
-      className="
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.25,
+            },
+          },
+        }}
+        className="hidden sm:flex flex-col gap-6   left-6 top-1/2 -translate-y-1/2 fixed z-999"
+      >
+        {socialLinks.map((item, i) => (
+          <motion.a
+            key={i}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={{
+              hidden: { opacity: 0, x: -60 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{
+              duration: 0.25,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              scale: 1.25,
+              rotate: 5,
+              backgroundColor: "var(--color-Accent)",
+              color: "var(--color-PrimaryBg)",
+              boxShadow: "0 0 20px rgba(78, 245, 200, 0.6)",
+              borderColor: "var(--color-AccentHover)",
+              transition: { duration: 0.25, ease: "easeOut" },
+            }}
+            whileTap={{
+              scale: 0.95,
+              rotate: -3,
+            }}
+            className="
         flex items-center justify-center text-[1.5rem]
         bg-[var(--color-CardBg)] text-[var(--color-PrimaryText)]
         border border-[var(--color-Border)]
@@ -225,23 +211,23 @@ export default function Intro() {
         hover:shadow-[0_0_10px_rgba(78,245,200,0.4)]
         cursor-pointer
       "
-    >
-      <motion.div
-        animate={{
-          y: [0, -5, 0],
-        }}
-        transition={{
-          duration: 3 + i,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: i * 0.3,
-        }}
-      >
-        {item.icon}
+          >
+            <motion.div
+              animate={{
+                y: [0, -5, 0],
+              }}
+              transition={{
+                duration: 3 + i,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.3,
+              }}
+            >
+              {item.icon}
+            </motion.div>
+          </motion.a>
+        ))}
       </motion.div>
-    </motion.a>
-  ))}
-</motion.div>
 
 
 

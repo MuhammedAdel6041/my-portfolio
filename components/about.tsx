@@ -4,10 +4,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { lines } from "@/lib/data";
 import SectionHeading from "./section-Heading";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
+    const { ref } = useSectionInView("About");
   return (
     <section
+    ref={ref}
       id="about"
       className="
       scroll-mt-12
