@@ -4,7 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { lines } from "@/lib/data";
 import SectionHeading from "./section-Heading";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/hooks";
+ 
 
 export default function About() {
     const { ref } = useSectionInView("About");

@@ -3,8 +3,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
- 
- 
+import Footer from "@/components/footer";
+import { Toaster } from "sonner";
+import ThemeSwitch from "@/components/theme-switch";
+import ThemeContextProvider from "@/context/theme-context";
+
+
 
 
 const geistSans = Geist({
@@ -34,7 +38,7 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative 
   bg-[var(--color-PrimaryBg)] text-[var(--color-PrimaryText)]`}
-  suppressHydrationWarning={true} 
+        suppressHydrationWarning={true}
       >
 
         <div
@@ -50,19 +54,40 @@ export default function RootLayout({
     lg:left-[-28rem] xl:left-[15rem] 2xl:left-[-5rem] -z-10
     opacity-20 bg-[#1E2D29]/40 dark:bg-[#0D1B2A]/40"
         ></div>
+ <ThemeContextProvider>
 
-    
-<ActiveSectionContextProvider>
-   <Header />
-        {children}
-     
 
-</ActiveSectionContextProvider>
-         
+   <ActiveSectionContextProvider>
+          <Header />
+          {children}
+        
+          <Footer />  
+          <Toaster
+            position="top-center"
+            richColors
+            toastOptions={{
+              style: {
+                background: "var(--color-CardBg)",
+                color: "var(--color-PrimaryText)",
+                border: "1px solid var(--color-Border)",
+              },
+              classNames: {
+                success: "bg-[var(--color-Accent)] text-[var(--color-BtnText)]",
+                error: "bg-red-500 text-white",
+                info: "bg-[var(--color-AccentMuted)] text-[var(--color-PrimaryText)]",
+              },
+            }}
+          />
+          <ThemeSwitch />
+        </ActiveSectionContextProvider>
+ </ThemeContextProvider>
 
-      
+       
 
-      
+
+
+
+
       </body>
     </html>
   );

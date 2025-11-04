@@ -4,7 +4,7 @@ import React from 'react';
 import SectionHeading from './section-Heading';
 import { projectsData } from '@/lib/data';
 import Project from './project';
-import { useSectionInView } from '@/lib/hooks';
+import { useSectionInView } from "@/hooks/hooks";
  
 
 

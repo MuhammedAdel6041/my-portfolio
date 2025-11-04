@@ -1,6 +1,9 @@
 import About from "@/components/about";
+import ContactForm from "@/components/contactForm";
+
+
 import Experience from "@/components/experience";
- 
+
 
 import InfiniteScrollAnimationPage from "@/components/InfiniteScrollAnimationPage";
 import Intro from "@/components/intro";
@@ -8,7 +11,8 @@ import Projects from "@/components/projects";
 
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
- 
+import ThemeSwitch from "@/components/theme-switch";
+
 
 
 
@@ -23,9 +27,13 @@ export default function Home() {
       <SectionDivider />
       <Skills />
       <SectionDivider />
-      <InfiniteScrollAnimationPage />
-      <Experience />
 
+      <Experience />
+      <InfiniteScrollAnimationPage />
+
+      <ContactForm />
+
+      <ThemeSwitch/>
     </main>
   );
 }

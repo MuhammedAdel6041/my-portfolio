@@ -10,13 +10,13 @@ import { motion } from "framer-motion";
 import {   CardContent } from "@/components/ui/card";
 import { experiencesData } from "@/lib/data";
 import SectionHeading from "./section-Heading";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/hooks";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
 
   return (
-    <section id="experience" ref={ref} className="py-32   ">
+    <section id="experience" ref={ref} className=" scroll-mt-28  py-8   ">
       <div className="container mx-auto px-4">
         <SectionHeading>Experience</SectionHeading>
 
