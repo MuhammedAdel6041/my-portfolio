@@ -30,16 +30,20 @@ export default function Skills() {
     <section
       ref={ref}
       id="skills"
-      className="scroll-mt-28   text-center px-4 max-w-[53rem]   mt-16 text-[var(--color-PrimaryText)]"
+      className="
+        scroll-mt-28 text-center px-4 max-w-[53rem] mt-16
+        text-[var(--color-PrimaryText)] 
+        dark:text-[var(--color-dark-PrimaryText)]
+      "
     >
       <SectionHeading>My Skills</SectionHeading>
 
       <motion.ul
-         className="
-    flex flex-wrap justify-center gap-3 mt-12
-    text-base sm:text-lg md:text-xl
-    max-w-full sm:max-w-[45rem] md:max-w-[53rem]
-  "
+        className="
+          flex flex-wrap justify-center gap-3 mt-12
+          text-base sm:text-lg md:text-xl
+          max-w-full sm:max-w-[45rem] md:max-w-[53rem]
+        "
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
@@ -50,28 +54,31 @@ export default function Skills() {
             variants={fadeInAnimationVariants}
             custom={index}
             className="
-  relative group 
-  px-5 py-3 rounded-xl 
-  backdrop-blur-lg 
-  border border-[var(--color-Border)] 
-  bg-[var(--color-CardBg)] 
-  shadow-md 
-  hover:shadow-[0_0_15px_var(--color-AccentHover)] 
-  hover:scale-105 
-  active:scale-95 
-  transition-all duration-300 ease-out 
-  cursor-pointer 
-  overflow-hidden
-"
+              relative group 
+              px-5 py-3 rounded-xl 
+              backdrop-blur-lg 
+              border border-[var(--color-Border)] 
+              dark:border-[var(--color-dark-Border)] 
+              bg-[var(--color-CardBg)] 
+              dark:bg-[var(--color-dark-CardBg)] 
+              shadow-md 
+              hover:shadow-[0_0_15px_var(--color-AccentHover)] 
+              dark:hover:shadow-[0_0_15px_var(--color-dark-AccentHover)] 
+              hover:scale-105 
+              active:scale-95 
+              transition-all duration-300 ease-out 
+              cursor-pointer 
+              overflow-hidden
+            "
           >
-             
-
-             <span
+            <span
               className="
                 relative z-10 
                 font-medium 
                 text-[var(--color-PrimaryText)] 
+                dark:text-[var(--color-dark-PrimaryText)] 
                 group-hover:text-[var(--color-Accent)] 
+                dark:group-hover:text-[var(--color-dark-Accent)] 
                 transition-colors duration-300
               "
             >
@@ -83,6 +90,3 @@ export default function Skills() {
     </section>
   );
 }
-
-
-

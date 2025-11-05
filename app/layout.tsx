@@ -36,59 +36,59 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative 
-  bg-[var(--color-PrimaryBg)] text-[var(--color-PrimaryText)]`}
+      <body
+        className={`
+      ${geistSans.variable} ${geistMono.variable} antialiased relative 
+      bg-[var(--color-PrimaryBg)] text-[var(--color-PrimaryText)]
+      dark:bg-[var(--color-dark-PrimaryBg)] dark:text-[var(--color-dark-PrimaryText)]
+    `}
         suppressHydrationWarning={true}
       >
-
+        {/* Right Glow */}
         <div
           className="absolute top-[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem]
-    rounded-full blur-[10rem] sm:w-[68.75rem] -z-10 
-    opacity-25 bg-[#4EF5C8]/40 dark:bg-[#4EF5C8]/20"
+      rounded-full blur-[10rem] sm:w-[68.75rem] -z-10 
+      opacity-25 bg-[#4EF5C8]/40 dark:bg-[#4EF5C8]/20
+      transition-all duration-300 ease-in-out"
         ></div>
 
-
+        {/* Left Glow */}
         <div
           className="absolute top-[-1rem] left-[-35rem] h-[31.25rem] w-[50rem]
-    rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem]
-    lg:left-[-28rem] xl:left-[15rem] 2xl:left-[-5rem] -z-10
-    opacity-20 bg-[#1E2D29]/40 dark:bg-[#0D1B2A]/40"
+      rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem]
+      lg:left-[-28rem] xl:left-[15rem] 2xl:left-[-5rem] -z-10
+      opacity-20 bg-[#1E2D29]/40 dark:bg-[#0D1B2A]/40
+      transition-all duration-300 ease-in-out"
         ></div>
- <ThemeContextProvider>
 
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <Header />
+            {children}
+            <Footer />
 
-   <ActiveSectionContextProvider>
-          <Header />
-          {children}
-        
-          <Footer />  
-          <Toaster
-            position="top-center"
-            richColors
-            toastOptions={{
-              style: {
-                background: "var(--color-CardBg)",
-                color: "var(--color-PrimaryText)",
-                border: "1px solid var(--color-Border)",
-              },
-              classNames: {
-                success: "bg-[var(--color-Accent)] text-[var(--color-BtnText)]",
-                error: "bg-red-500 text-white",
-                info: "bg-[var(--color-AccentMuted)] text-[var(--color-PrimaryText)]",
-              },
-            }}
-          />
-          <ThemeSwitch />
-        </ActiveSectionContextProvider>
- </ThemeContextProvider>
+            <Toaster
+              position="top-center"
+              richColors
+              toastOptions={{
+                style: {
+                  background: "var(--color-CardBg)",
+                  color: "var(--color-PrimaryText)",
+                  border: "1px solid var(--color-Border)",
+                },
+                classNames: {
+                  success: "bg-[var(--color-Accent)] text-[var(--color-BtnText)] dark:bg-[var(--color-dark-Accent)] dark:text-[var(--color-dark-BtnText)]",
+                  error: "bg-red-500 text-white dark:bg-red-600",
+                  info: "bg-[var(--color-AccentMuted)] text-[var(--color-PrimaryText)] dark:bg-[var(--color-dark-AccentMuted)] dark:text-[var(--color-dark-PrimaryText)]",
+                },
+              }}
+            />
 
-       
-
-
-
-
-
+            <ThemeSwitch />
+          </ActiveSectionContextProvider>
+        </ThemeContextProvider>
       </body>
     </html>
+
   );
 }

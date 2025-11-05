@@ -18,7 +18,7 @@ import ThemeSwitch from "@/components/theme-switch";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center ">
+    <main className="flex flex-col items-center  ">
       <Intro />
       <InfiniteScrollAnimationPage />
       <About />

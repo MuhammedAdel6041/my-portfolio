@@ -1,55 +1,79 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+ 
 @custom-variant dark (&:is(.dark *));
 
 /* 🌞 LIGHT MODE — ARCTIC CYBER MINT */
 @theme {
-  --color-PrimaryBg: #0D1117;
-  --color-PrimaryText: #D7DBDF;
-  --color-SecondaryText: #9BA5B5;
-  --color-Border: #21262D;
-  --color-CardBg: #161B22;
+  /* 🌞 LIGHT MODE — ARCTIC CYBER MINT */
+  --color-PrimaryBg: #f8fafc; /* خلفية فاتحة جدًا */
+  --color-PrimaryText: #1a1f25; /* نص داكن واضح */
+  --color-SecondaryText: #475569; /* رمادي متوسط */
+  --color-Border: #e2e8f0; /* حدود فاتحة */
+  --color-CardBg: #ffffff; /* الكروت بيضاء ناصعة */
 
-  --color-Accent: #4EF5C8;
-  --color-AccentHover: #41CFA9;
-  --color-AccentMuted: #1E2D29;
+  --color-Accent: #00d6a3; /* Mint أخضر فاتح */
+  --color-AccentHover: #00b98b;
+  --color-AccentMuted: #d6f5ec;
 
-  --color-NavBg: rgba(13, 17, 23, 0.65);
-  --color-NavText: #D7DBDF;
-  --color-NavHover: #4EF5C8;
+  --color-NavBg: rgba(255, 255, 255, 0.7);
+  --color-NavText: #1a1f25;
+  --color-NavHover: #00d6a3;
 
-  --color-SectionBg: #161B22;
-  --color-SectionText: #9BA5B5;
-  --color-Heading: #FFFFFF;
+  --color-SectionBg: #ffffff;
+  --color-SectionText: #475569;
+  --color-Heading: #0f172a;
 
-  --color-ProjectBg: #161B22;
-  --color-ProjectText: #9BA5B5;
-  --color-ProjectTitle: #D7DBDF;
+  --color-ProjectBg: #f1f5f9;
+  --color-ProjectText: #475569;
+  --color-ProjectTitle: #1a1f25;
 
-  --color-ContactGradientFrom: #0D1117;
-  --color-ContactGradientTo: #1E2D29;
-  --color-ContactText: #D7DBDF;
+  --color-ContactGradientFrom: #e2e8f0;
+  --color-ContactGradientTo: #ffffff;
+  --color-ContactText: #1a1f25;
 
-  --color-BtnBg: #4EF5C8;
-  --color-BtnText: #0D1117;
-  --color-BtnHoverBg: #41CFA9;
-  --color-BtnOutline: #4EF5C8;
-  --color-BtnOutlineHoverBg: #4EF5C8;
-  --color-BtnOutlineHoverText: #0D1117;
+  --color-BtnBg: #00d6a3;
+  --color-BtnText: #ffffff;
+  --color-BtnHoverBg: #00b98b;
+  --color-BtnOutline: #00d6a3;
+  --color-BtnOutlineHoverBg: #00d6a3;
+  --color-BtnOutlineHoverText: #ffffff;
 }
 
-/* 🌊 DARK MODE — ARCTIC CYBER MINT */
+/* 🌙 DARK MODE — ARCTIC CYBER MINT DEEP */
 @theme dark {
-  --color-PrimaryBg: #080B0E;
-  --color-PrimaryText: #CBD2D6;
-  --color-SecondaryText: #8F9BA8;
-  --color-Border: #14181D;
-  --color-CardBg: #101418;
+  --color-dark-PrimaryBg: #0a0c10; /* داكن جدًا */
+  --color-dark-PrimaryText: #d9e3ea; /* فاتح جدًا */
+  --color-dark-SecondaryText: #8f9ba8; /* رمادي مزرق */
+  --color-dark-Border: #1a1f25; /* غامق لكن واضح */
+  --color-dark-CardBg: #12161c; /* كارت داكن */
 
-  --color-Accent: #4EF5C8;
-  --color-AccentHover: #5CFAD3;
-  --color-AccentMuted: #193027;
+  --color-dark-Accent: #4ef5c8; /* Mint مشع */
+  --color-dark-AccentHover: #5ffad6;
+  --color-dark-AccentMuted: #163b2f;
+
+  --color-dark-NavBg: rgba(10, 12, 16, 0.8);
+  --color-dark-NavText: #d9e3ea;
+  --color-dark-NavHover: #4ef5c8;
+
+  --color-dark-SectionBg: #0e1318;
+  --color-dark-SectionText: #a3b1c2;
+  --color-dark-Heading: #ffffff;
+
+  --color-dark-ProjectBg: #141a21;
+  --color-dark-ProjectText: #a3b1c2;
+  --color-dark-ProjectTitle: #e4edf5;
+
+  --color-dark-ContactGradientFrom: #0a0c10;
+  --color-dark-ContactGradientTo: #163b2f;
+  --color-dark-ContactText: #d9e3ea;
+
+  --color-dark-BtnBg: #4ef5c8;
+  --color-dark-BtnText: #0a0c10;
+  --color-dark-BtnHoverBg: #5ffad6;
+  --color-dark-BtnOutline: #4ef5c8;
+  --color-dark-BtnOutlineHoverBg: #4ef5c8;
+  --color-dark-BtnOutlineHoverText: #0a0c10;
 }
 
 @theme inline {
@@ -167,5 +191,3 @@
     @apply bg-background text-foreground;
   }
 }
-
- 

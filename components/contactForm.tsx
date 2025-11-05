@@ -9,7 +9,7 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
 import SectionHeading from "./section-Heading";
-import { FiUser, FiMail, FiPhone, FiFileText, FiMessageSquare, FiSend } from "react-icons/fi"; // Added FiSend for the button icon
+import { FiUser, FiMail, FiPhone, FiFileText, FiMessageSquare, FiSend } from "react-icons/fi";
 import { useSectionInView } from "@/hooks/hooks";
 
 const fadeUp: Variants = {
@@ -28,14 +28,22 @@ const fadeUp: Variants = {
 export default function ContactForm() {
   const { form, loading, sendEmail } = useContactForm();
   const { ref } = useSectionInView("Contact");
+
   return (
-    <section id="contact" ref={ref}  className="py-20 text-[var(--color-SectionText)] w-full scroll-mt-28  my-10 ">
+    <section id="contact" ref={ref} className="py-20 w-full scroll-mt-28 my-10 text-[var(--color-SectionText)] dark:text-[var(--color-dark-SectionText)]">
       <SectionHeading>Contact Me</SectionHeading>
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="w-full max-w-7xl mx-auto p-16 rounded-3xl border border-[var(--color-Border)] shadow-2xl border-[var(--color-Accent)]/30 hover:border-[var(--color-Accent)]/70 transition-all duration-500 backdrop-blur-md"
+        className="
+          w-full max-w-7xl mx-auto p-16 rounded-3xl
+          border border-[var(--color-Border)] dark:border-[var(--color-dark-Border)]
+          shadow-2xl border-[var(--color-Accent)]/30 dark:border-[var(--color-dark-Accent)]/30
+          hover:border-[var(--color-Accent)]/70 dark:hover:border-[var(--color-dark-Accent)]/70
+          transition-all duration-500 backdrop-blur-md
+          bg-[var(--color-CardBg)] dark:bg-[var(--color-dark-CardBg)]
+        "
       >
         <Formik
           initialValues={{
@@ -73,18 +81,11 @@ export default function ContactForm() {
           {() => (
             <Form ref={form} className="space-y-12">
               {/* Name + Email */}
-              <motion.div
-                variants={fadeUp}
-                custom={1}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-10"
-              >
+              <motion.div variants={fadeUp} custom={1} className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 {/* Name */}
                 <div className="relative">
-                  <label
-                    htmlFor="name"
-                    className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)]"
-                  >
-                    <FiUser className="w-5 h-5 mr-2 text-[var(--color-Accent)]" />
+                  <label htmlFor="name" className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)]">
+                    <FiUser className="w-5 h-5 mr-2 text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)]" />
                     Name
                   </label>
                   <Field
@@ -92,22 +93,15 @@ export default function ContactForm() {
                     id="name"
                     name="name"
                     placeholder="Enter your name"
-                    className="w-full h-16 text-lg rounded-xl bg-[var(--color-CardBg)] border border-[var(--color-Border)] text-[var(--color-PrimaryText)] focus:ring-2 focus:ring-[var(--color-Accent)] focus:border-[var(--color-Accent)] pl-4 shadow-sm transition-all duration-300"
+                    className="w-full h-16 text-lg rounded-xl bg-[var(--color-CardBg)] dark:bg-[var(--color-dark-CardBg)] border border-[var(--color-Border)] dark:border-[var(--color-dark-Border)] text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)] focus:ring-2 focus:ring-[var(--color-Accent)] dark:focus:ring-[var(--color-dark-Accent)] focus:border-[var(--color-Accent)] dark:focus:border-[var(--color-dark-Accent)] pl-4 shadow-sm transition-all duration-300"
                   />
-                  <ErrorMessage
-                    name="name"
-                    component="p"
-                    className="text-[var(--color-Accent)] text-sm mt-2"
-                  />
+                  <ErrorMessage name="name" component="p" className="text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)] text-sm mt-2" />
                 </div>
 
                 {/* Email */}
                 <div className="relative">
-                  <label
-                    htmlFor="email"
-                    className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)]"
-                  >
-                    <FiMail className="w-5 h-5 mr-2 text-[var(--color-Accent)]" />
+                  <label htmlFor="email" className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)]">
+                    <FiMail className="w-5 h-5 mr-2 text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)]" />
                     Email
                   </label>
                   <Field
@@ -116,29 +110,18 @@ export default function ContactForm() {
                     id="email"
                     name="email"
                     placeholder="your@email.com"
-                    className="w-full h-16 text-lg rounded-xl bg-[var(--color-CardBg)] border border-[var(--color-Border)] text-[var(--color-PrimaryText)] focus:ring-2 focus:ring-[var(--color-Accent)] focus:border-[var(--color-Accent)] pl-4 shadow-sm transition-all duration-300"
+                    className="w-full h-16 text-lg rounded-xl bg-[var(--color-CardBg)] dark:bg-[var(--color-dark-CardBg)] border border-[var(--color-Border)] dark:border-[var(--color-dark-Border)] text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)] focus:ring-2 focus:ring-[var(--color-Accent)] dark:focus:ring-[var(--color-dark-Accent)] focus:border-[var(--color-Accent)] dark:focus:border-[var(--color-dark-Accent)] pl-4 shadow-sm transition-all duration-300"
                   />
-                  <ErrorMessage
-                    name="email"
-                    component="p"
-                    className="text-[var(--color-Accent)] text-sm mt-2"
-                  />
+                  <ErrorMessage name="email" component="p" className="text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)] text-sm mt-2" />
                 </div>
               </motion.div>
 
               {/* Phone + Subject */}
-              <motion.div
-                variants={fadeUp}
-                custom={2}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-10"
-              >
+              <motion.div variants={fadeUp} custom={2} className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 {/* Phone */}
                 <div className="relative">
-                  <label
-                    htmlFor="phone"
-                    className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)]"
-                  >
-                    <FiPhone className="w-5 h-5 mr-2 text-[var(--color-Accent)]" />
+                  <label htmlFor="phone" className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)]">
+                    <FiPhone className="w-5 h-5 mr-2 text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)]" />
                     Phone
                   </label>
                   <Field
@@ -146,22 +129,15 @@ export default function ContactForm() {
                     id="phone"
                     name="phone"
                     placeholder="+20 123 456 7890"
-                    className="w-full h-16 text-lg rounded-xl bg-[var(--color-CardBg)] border border-[var(--color-Border)] text-[var(--color-PrimaryText)] focus:ring-2 focus:ring-[var(--color-Accent)] focus:border-[var(--color-Accent)] pl-4 shadow-sm transition-all duration-300"
+                    className="w-full h-16 text-lg rounded-xl bg-[var(--color-CardBg)] dark:bg-[var(--color-dark-CardBg)] border border-[var(--color-Border)] dark:border-[var(--color-dark-Border)] text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)] focus:ring-2 focus:ring-[var(--color-Accent)] dark:focus:ring-[var(--color-dark-Accent)] focus:border-[var(--color-Accent)] dark:focus:border-[var(--color-dark-Accent)] pl-4 shadow-sm transition-all duration-300"
                   />
-                  <ErrorMessage
-                    name="phone"
-                    component="p"
-                    className="text-[var(--color-Accent)] text-sm mt-2"
-                  />
+                  <ErrorMessage name="phone" component="p" className="text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)] text-sm mt-2" />
                 </div>
 
                 {/* Subject */}
                 <div className="relative">
-                  <label
-                    htmlFor="subject"
-                    className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)]"
-                  >
-                    <FiFileText className="w-5 h-5 mr-2 text-[var(--color-Accent)]" />
+                  <label htmlFor="subject" className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)]">
+                    <FiFileText className="w-5 h-5 mr-2 text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)]" />
                     Subject
                   </label>
                   <Field
@@ -169,23 +145,16 @@ export default function ContactForm() {
                     id="subject"
                     name="subject"
                     placeholder="Project Title or Subject"
-                    className="w-full h-16 text-lg rounded-xl bg-[var(--color-CardBg)] border border-[var(--color-Border)] text-[var(--color-PrimaryText)] focus:ring-2 focus:ring-[var(--color-Accent)] focus:border-[var(--color-Accent)] pl-4 shadow-sm transition-all duration-300"
+                    className="w-full h-16 text-lg rounded-xl bg-[var(--color-CardBg)] dark:bg-[var(--color-dark-CardBg)] border border-[var(--color-Border)] dark:border-[var(--color-dark-Border)] text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)] focus:ring-2 focus:ring-[var(--color-Accent)] dark:focus:ring-[var(--color-dark-Accent)] focus:border-[var(--color-Accent)] dark:focus:border-[var(--color-dark-Accent)] pl-4 shadow-sm transition-all duration-300"
                   />
-                  <ErrorMessage
-                    name="subject"
-                    component="p"
-                    className="text-[var(--color-Accent)] text-sm mt-2"
-                  />
+                  <ErrorMessage name="subject" component="p" className="text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)] text-sm mt-2" />
                 </div>
               </motion.div>
 
               {/* Message */}
               <motion.div variants={fadeUp} custom={3} className="relative">
-                <label
-                  htmlFor="message"
-                  className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)]"
-                >
-                  <FiMessageSquare className="w-5 h-5 mr-2 text-[var(--color-Accent)]" />
+                <label htmlFor="message" className="flex items-center mb-3 text-lg font-semibold text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)]">
+                  <FiMessageSquare className="w-5 h-5 mr-2 text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)]" />
                   Message
                 </label>
                 <Field
@@ -194,13 +163,9 @@ export default function ContactForm() {
                   name="message"
                   rows={10}
                   placeholder="Write your message here..."
-                  className="w-full text-lg rounded-xl bg-[var(--color-CardBg)] border border-[var(--color-Border)] text-[var(--color-PrimaryText)] resize-none focus:ring-2 focus:ring-[var(--color-Accent)] focus:border-[var(--color-Accent)] p-4 shadow-sm transition-all duration-300"
+                  className="w-full text-lg rounded-xl bg-[var(--color-CardBg)] dark:bg-[var(--color-dark-CardBg)] border border-[var(--color-Border)] dark:border-[var(--color-dark-Border)] text-[var(--color-PrimaryText)] dark:text-[var(--color-dark-PrimaryText)] resize-none focus:ring-2 focus:ring-[var(--color-Accent)] dark:focus:ring-[var(--color-dark-Accent)] focus:border-[var(--color-Accent)] dark:focus:border-[var(--color-dark-Accent)] p-4 shadow-sm transition-all duration-300"
                 />
-                <ErrorMessage
-                  name="message"
-                  component="p"
-                  className="text-[var(--color-Accent)] text-sm mt-2"
-                />
+                <ErrorMessage name="message" component="p" className="text-[var(--color-Accent)] dark:text-[var(--color-dark-Accent)] text-sm mt-2" />
               </motion.div>
 
               {/* Button */}
@@ -208,7 +173,7 @@ export default function ContactForm() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full max-w-md py-6 cursor-pointer text-xl font-semibold rounded-xl bg-[var(--color-BtnBg)] text-[var(--color-BtnText)] hover:bg-[var(--color-BtnHoverBg)]  border-[var(--color-Border)] shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full max-w-md py-6 cursor-pointer text-xl font-semibold rounded-xl bg-[var(--color-BtnBg)] dark:bg-[var(--color-dark-BtnBg)] text-[var(--color-BtnText)] dark:text-[var(--color-dark-BtnText)] hover:bg-[var(--color-BtnHoverBg)] dark:hover:bg-[var(--color-dark-BtnHoverBg)] border-[var(--color-Border)] dark:border-[var(--color-dark-Border)] shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <div className="flex items-center">
