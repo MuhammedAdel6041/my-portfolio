@@ -61,17 +61,10 @@ export default function InfiniteScrollAnimationPage() {
             </p>
           </li>
         ))}
+        
       </motion.ul>
 
-      <div
-        className="
-          absolute inset-0 bg-gradient-to-r 
-          from-[var(--color-PrimaryBg)]/70 via-transparent to-[var(--color-PrimaryBg)]/70 
-          dark:from-[var(--color-dark-PrimaryBg)]/70 
-          dark:to-[var(--color-dark-PrimaryBg)]/70 
-          pointer-events-none
-        "
-      />
+      
     </motion.section>
   );
 }

@@ -8,14 +8,14 @@ import Link from 'next/link';
 import { BsArrowRight } from 'react-icons/bs';
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { HiDownload } from 'react-icons/hi';
- 
+
 
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { activeSection } = useActiveSectionContext();
-   
-   
+
+
   return (
     <section
       ref={ref}
@@ -26,7 +26,7 @@ export default function Intro() {
     bg-[url('/images/background-light.svg')] dark:bg-[url('/images/background-dark.svg')]
     bg-cover bg-center bg-no-repeat
     bg-[var(--color-PrimaryBg)] dark:bg-[var(--color-dark-PrimaryBg)]
-    transition-all duration-75 ease-in-out
+  transition-colors duration-500 ease-out
   "
     >
 
